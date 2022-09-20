@@ -1,0 +1,223 @@
+<html>
+  <head>
+    <title>ARTOLDO crypto</title><meta charset="utf-8" />
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <script src="assets/engine.js"></script>
+    <script src="assets/physics.js"></script>
+    <script src="assets/extras.js"></script>
+    <script src="assets/environment.js"></script>
+    <script src="assets/rain.js"></script>
+    <script src="assets/gif.js"></script>
+    <script src="assets/htmlrender.js"></script>
+    <script src="assets/teleport.js"></script>
+    <script src="assets/event.js"></script>
+
+<style>
+.a-dialog-allow-button {
+  background-color: white;
+}
+
+.a-dialog-deny-button {
+  background-color: white;
+}
+
+.a-dialog-ok-button {
+   background-color: black;
+ }
+</style>
+
+</head>
+
+
+  <body>
+
+<a-scene physics="debug: true" loading-screen="dotsColor: #ffffff; backgroundColor: black" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: true" antialias="true">
+
+<!-- World -->
+
+<a-entity environment="preset: tron; dressingAmount:500; dressingColor: #ffffff; gridColor: #999900; horizonColor: #ffffff; skyColor: #ffffff; groundColor: #000000;" light="intensity: 0.6; type: hemisphere;"></a-entity>
+
+<!-- Sound -->
+
+    <audio id="music" src="assets/sound.wav" crossorigin="anonymous"></audio>
+    
+<script>
+document.addEventListener("click", function () {
+  document.querySelector("a-text").setAttribute("visible", false);
+});
+
+function playing(index) {
+  console.log("now playing", index);
+  document.querySelector("#player").setAttribute("visible", true);
+}
+</script>
+
+<!-- Camera -->
+
+<a-entity id="rig" position="0 30 0" movement-controls kinematic-body look-controls="pointerLockEnabled:true;">
+<a-entity id="camera" camera position="0 1.6 0" cursor-visible="true">
+
+<a-cursor position="0 0 -.05" color="#999900;" scale=".03 .03 1"></a-cursor>
+</a-entity>
+</a-entity>
+
+<!-- Objects -->
+
+<a-entity id="box1" sound="src: #music; on: mouseenter;" scale="1.5 1.5 1.5" rotation="0 0 0" static-body position="-8.33499 2 0.44742" gravity="0.2" geometry="" material="src:url(images/icon.png);" animation="property: rotation; to: 360 0 360; loop: true; easing: linear; dur: 10000";
+animation__mouseenter="property: position; to: -8.33499 500 0.44742; startEvents: mouseenter; dur: 20000";>
+</a-entity>
+
+<a-entity id="box2" sound="src: #music; on: mouseenter;"  scale="1.5 1.5 1.5" rotation="0 0 0" static-body position="-13.13495 2 -5.5234" geometry="" material="src:url(images/icon.png);" animation="property: rotation; to: 360 0 360; loop: true; easing: linear; dur: 10000"; 
+animation__mouseenter="property: position; to: -8.33499 500 0.44742; startEvents: mouseenter; dur: 20000";>
+</a-entity>     
+
+<a-entity id="box3" sound="src: #music; on: mouseenter;" scale="1.5 1.5 1.5" rotation="0 0 0" static-body position="-5.70 2 12.198"  geometry="" material="src:url(images/icon.png);" animation="property: rotation; to: 360 360 0; loop: true; easing: linear; dur: 10000";
+animation__mouseenter="property: position; to: -8.33499 500 0.44742; startEvents: mouseenter; dur: 20000";> 
+</a-entity>
+
+<a-entity id="box4" sound="src: #music; on: mouseenter;" scale="1.5 1.5 1.5" rotation="0 0 0" static-body position="6.118 2 -0.968" geometry="" material="src:url(images/icon.png);" animation="property: rotation; to: 0 360 360; loop: true; easing: linear; dur: 10000";
+animation__mouseenter="property: position; to: -8.33499 500 0.44742; startEvents: mouseenter; dur: 20000";> 
+</a-entity>
+
+<a-entity id="box5" sound="src: #music; on: mouseenter;" scale="1.5 1.5 1.5" rotation="0 0 0" static-body position="12.87 2 -3.914" geometry="" material="src:url(images/icon.png);" animation="property: rotation; to: 360 360 0; loop: true; easing: linear; dur: 10000";
+animation__mouseenter="property: position; to: -8.33499 500 0.44742; startEvents: mouseenter; dur: 20000";> 
+</a-entity>
+
+<a-entity id="box6" sound="src: #music; on: mouseenter;" scale="1.5 1.5 1.5" rotation="0 0 0" static-body position="-14.40479 2 13.09522" geometry="" material="src:url(images/icon.png);" animation="property: rotation; to: 360 0 360; loop: true; easing: linear; dur: 10000";
+animation__mouseenter="property: position; to: -8.33499 500 0.44742; startEvents: mouseenter; dur: 20000";> 
+</a-entity>
+
+<a-entity id="box7" sound="src: #music; on: mouseenter;" scale="1.5 1.5 1.5" rotation="0 0 0" static-body position="-1.79 2 -4.128" geometry="" material="src:url(images/icon.png);" animation="property: rotation; to: 0 360 360; loop: true; easing: linear; dur: 10000";
+animation__mouseenter="property: position; to: -8.33499 500 0.44742; startEvents: mouseenter; dur: 20000";> 
+</a-entity>
+
+<a-entity id="box8" sound="src: #music; on: mouseenter;" scale="1.5 1.5 1.5" rotation="0 0 0" static-body position="2.275 2 5.160" geometry="" material="src:url(images/icon.png);" animation="property: rotation; to: 360 360 0; loop: true; easing: linear; dur: 10000";
+animation__mouseenter="property: position; to: -8.33499 500 0.44742; startEvents: mouseenter; dur: 20000";> 
+</a-entity>
+
+<a-entity id="box9" sound="src: #music; on: mouseenter;" scale="1.5 1.5 1.5" rotation="0 0 0" static-body position="4.774 2 15.187" geometry="" material="src:url(images/icon.png);" animation="property: rotation; to: 360 0 360; loop: true; easing: linear; dur: 10000";
+animation__mouseenter="property: position; to: -8.33499 500 0.44742; startEvents: mouseenter; dur: 20000";> 
+</a-entity>
+
+<!-- Projects -->
+
+<a-plane static-body id="Poster 1" onclick="location.href='https://play.decentraland.org/?position=9%2C98','_blank';" width="2.8" height="4.2" position="-16 2.5 -9" material="src:images/lb.png; transparent: true" rotation="0  90 0" 
+                 animation__mouseenter="property: scale; to: 1.1 1.1 1.1; startEvents: mouseenter; dur: 200";
+                 animation__mouseleave="property: scale; to: 1 1 1; startEvents: mouseleave; dur: 200";>
+</a-plane>
+
+<a-plane static-body id="Poster 2" onclick="location.href='https://play.decentraland.org/?position=9%2C98','_blank';" width="2.8" height="4.2" position="-16 2.5 -6" material="src:images/lb.png; transparent: true" rotation="0  90 0" 
+                 animation__mouseenter="property: scale; to: 1.1 1.1 1.1; startEvents: mouseenter; dur: 200";
+                 animation__mouseleave="property: scale; to: 1 1 1; startEvents: mouseleave; dur: 200";>
+</a-plane>
+
+<a-plane static-body id="Poster 3" onclick="location.href='https://play.decentraland.org/?position=9%2C98','_blank';" width="2.8" height="4.2" position="-16 2.5 -3" material="src:images/lb.png; transparent: true" rotation="0  90 0" 
+                 animation__mouseenter="property: scale; to: 1.1 1.1 1.1; startEvents: mouseenter; dur: 200";
+                 animation__mouseleave="property: scale; to: 1 1 1; startEvents: mouseleave; dur: 200";>
+</a-plane>
+
+<a-plane static-body id="Poster 4" onclick="location.href='https://play.decentraland.org/?position=9%2C98','_blank';" width="2.8" height="4.2" position="-16 2.5 0" material="src:images/lb.png; transparent: true" rotation="0  90 0" 
+                 animation__mouseenter="property: scale; to: 1.1 1.1 1.1; startEvents: mouseenter; dur: 200";
+                 animation__mouseleave="property: scale; to: 1 1 1; startEvents: mouseleave; dur: 200";>
+</a-plane>
+
+<a-plane static-body id="Poster 5" onclick="location.href='https://play.decentraland.org/?position=9%2C98','_blank';" width="2.8" height="4.2" position="-16 2.5 3" material="src:images/lb.png; transparent: true" rotation="0  90 0" 
+                 animation__mouseenter="property: scale; to: 1.1 1.1 1.1; startEvents: mouseenter; dur: 200";
+                 animation__mouseleave="property: scale; to: 1 1 1; startEvents: mouseleave; dur: 200";>
+</a-plane>
+
+<a-plane static-body id="Poster 6" onclick="location.href='https://play.decentraland.org/?position=9%2C98','_blank';" width="2.8" height="4.2" position="-16 2.5 6" material="src:images/lb.png; transparent: true" rotation="0  90 0" 
+                 animation__mouseenter="property: scale; to: 1.1 1.1 1.1; startEvents: mouseenter; dur: 200";
+                 animation__mouseleave="property: scale; to: 1 1 1; startEvents: mouseleave; dur: 200";>
+</a-plane>
+    
+<a-plane static-body id="Poster 7" onclick="location.href='https://play.decentraland.org/?position=9%2C98','_blank';" width="2.8" height="4.2" position="-16 2.5 9" material="src:images/lb.png; transparent: true" rotation="0  90 0" 
+                 animation__mouseenter="property: scale; to: 1.1 1.1 1.1; startEvents: mouseenter; dur: 200";
+                 animation__mouseleave="property: scale; to: 1 1 1; startEvents: mouseleave; dur: 200";>
+</a-plane>
+
+<a-plane static-body id="Poster 8" onclick="location.href='https://play.decentraland.org/?position=9%2C98','_blank';" width="2.8" height="4.2" position="-16 2.5 12" material="src:images/lb.png; transparent: true" rotation="0  90 0" 
+                 animation__mouseenter="property: scale; to: 1.1 1.1 1.1; startEvents: mouseenter; dur: 200";
+                 animation__mouseleave="property: scale; to: 1 1 1; startEvents: mouseleave; dur: 200";>
+</a-plane>
+
+<a-plane static-body id="Poster 9" onclick="location.href='https://play.decentraland.org/?position=9%2C98','_blank';" width="2.8" height="4.2" position="-16 2.5 15" material="src:images/lb.png; transparent: true" rotation="0  90 0" 
+                 animation__mouseenter="property: scale; to: 1.1 1.1 1.1; startEvents: mouseenter; dur: 200";
+                 animation__mouseleave="property: scale; to: 1 1 1; startEvents: mouseleave; dur: 200";>
+</a-plane>
+   
+
+<a-plane static-body id="Poster 10" onclick="location.href='https://play.decentraland.org/?position=9%2C98','_blank';" width="2.8" height="4.2" position="16 2.5 -9" material="src:images/lb.png; transparent: true" rotation="0  -90 0" 
+                 animation__mouseenter="property: scale; to: 1.1 1.1 1.1; startEvents: mouseenter; dur: 200";
+                 animation__mouseleave="property: scale; to: 1 1 1; startEvents: mouseleave; dur: 200";>
+</a-plane>
+
+<a-plane static-body id="Poster 11" onclick="location.href='https://play.decentraland.org/?position=9%2C98','_blank';" width="2.8" height="4.2" position="16 2.5 -6" material="src:images/lb.png; transparent: true" rotation="0  -90 0" 
+                 animation__mouseenter="property: scale; to: 1.1 1.1 1.1; startEvents: mouseenter; dur: 200";
+                 animation__mouseleave="property: scale; to: 1 1 1; startEvents: mouseleave; dur: 200";>
+</a-plane>
+
+<a-plane static-body id="Poster 12" onclick="location.href='https://play.decentraland.org/?position=9%2C98','_blank';" width="2.8" height="4.2" position="16 2.5 -3" material="src:images/lb.png; transparent: true" rotation="0  -90 0" 
+                 animation__mouseenter="property: scale; to: 1.1 1.1 1.1; startEvents: mouseenter; dur: 200";
+                 animation__mouseleave="property: scale; to: 1 1 1; startEvents: mouseleave; dur: 200";>
+</a-plane>
+
+<a-plane static-body id="Poster 13" onclick="location.href='https://play.decentraland.org/?position=9%2C98','_blank';" width="2.8" height="4.2" position="16 2.5 0" material="src:images/lb.png; transparent: true" rotation="0  -90 0" 
+                 animation__mouseenter="property: scale; to: 1.1 1.1 1.1; startEvents: mouseenter; dur: 200";
+                 animation__mouseleave="property: scale; to: 1 1 1; startEvents: mouseleave; dur: 200";>
+</a-plane>
+
+<a-plane static-body id="Poster 14" onclick="location.href='https://play.decentraland.org/?position=9%2C98','_blank';" width="2.8" height="4.2" position="16 2.5 3" material="src:images/lb.png; transparent: true" rotation="0  -90 0" 
+                 animation__mouseenter="property: scale; to: 1.1 1.1 1.1; startEvents: mouseenter; dur: 200";
+                 animation__mouseleave="property: scale; to: 1 1 1; startEvents: mouseleave; dur: 200";>
+</a-plane>
+
+<a-plane static-body id="Poster 15" onclick="location.href='https://play.decentraland.org/?position=9%2C98','_blank';" width="2.8" height="4.2" position="16 2.5 6" material="src:images/lb.png; transparent: true" rotation="0  -90 0" 
+                 animation__mouseenter="property: scale; to: 1.1 1.1 1.1; startEvents: mouseenter; dur: 200";
+                 animation__mouseleave="property: scale; to: 1 1 1; startEvents: mouseleave; dur: 200";>
+</a-plane>
+    
+<a-plane static-body id="Poster 16" onclick="location.href='https://play.decentraland.org/?position=9%2C98','_blank';" width="2.8" height="4.2" position="16 2.5 9" material="src:images/lb.png; transparent: true" rotation="0  -90 0" 
+                 animation__mouseenter="property: scale; to: 1.1 1.1 1.1; startEvents: mouseenter; dur: 200";
+                 animation__mouseleave="property: scale; to: 1 1 1; startEvents: mouseleave; dur: 200";>
+</a-plane>
+
+<a-plane static-body id="Poster 17" onclick="location.href='https://play.decentraland.org/?position=9%2C98','_blank';" width="2.8" height="4.2" position="16 2.5 12" material="src:images/lb.png; transparent: true" rotation="0  -90 0" 
+                 animation__mouseenter="property: scale; to: 1.1 1.1 1.1; startEvents: mouseenter; dur: 200";
+                 animation__mouseleave="property: scale; to: 1 1 1; startEvents: mouseleave; dur: 200";>
+</a-plane>
+
+<a-plane static-body id="Poster 18" onclick="location.href='https://play.decentraland.org/?position=9%2C98','_blank';" width="2.8" height="4.2" position="16 2.5 15" material="src:images/lb.png; transparent: true" rotation="0  -90 0" 
+                 animation__mouseenter="property: scale; to: 1.1 1.1 1.1; startEvents: mouseenter; dur: 200";
+                 animation__mouseleave="property: scale; to: 1 1 1; startEvents: mouseleave; dur: 200";>
+</a-plane>
+
+
+<!-- Logo -->
+
+<a-plane width="5.418" height="2" position="0 5 -15" material="src:images/artoldocrypto.png; transparent: true" rotation="0 0 0"></a-plane>
+<a-plane width="2" height="2" position="-1 2 -15" material="src: images/pc.png; transparent: true" shadow="" geometry="" rotation="0 0 0"></a-plane>
+<a-plane width="2" height="2" position="1 2 -15" material="src: images/mobile.png; transparent: true" shadow="" geometry="" rotation="0 0 0"></a-plane>
+
+<!-- Wall -->
+
+<a-box static-body material="opacity: 0.0; transparent: true" width="1000" height="1000" rotation="0 0 0" scale="60 20 2" position="0 0 21.0"></a-box>
+<a-box static-body material="opacity: 0.0; transparent: true" width="1000" height="1000" rotation="0 -90 0" scale="60 20 2" position="18 0 0"></a-box>
+<a-box static-body material="opacity: 0.0; transparent: true" width="1000" height="1000" rotation="0 -90 0" scale="60 20 2" position="-18 0 0"></a-box>
+<a-box static-body material="opacity: 0.0; transparent: true" width="1000" height="1000" otation="0 0 0" scale="60 20 2" position="0 0 -15"></a-box>
+
+<!-- Floor -->
+
+<a-plane static-body material="opacity: 0.0; transparent: true" width="1000" height="1000" rotation="-90 0 0" position="0 0 0"></a-plane>
+ 
+</a-scene>
+
+  </body>
+</html>
+
+
+
+
+
+
